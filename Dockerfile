@@ -1,6 +1,7 @@
-#FROM nvidia/cuda:10.0-cudnn7-devel
+FROM nvidia/cuda:10.0-cudnn7-devel
+#this version is Ubuntu 18
 #FROM nvidia/cuda:8.0-cudnn7-devel
-FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
+#FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
 
 #get deps
 #a. Do not do anything if you set the WITH_flag to BUILD, CMake will automatically download Eigen. 
@@ -8,10 +9,10 @@ FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
 RUN apt-get update && \
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 python3-dev python3-pip git g++ wget make libprotobuf-dev protobuf-compiler libopencv-dev \
-libgoogle-glog-dev libboost-all-dev libhdf5-dev libatlas-base-dev \
+libgoogle-glog-dev libboost-all-dev libcaffe-cuda-dev libhdf5-dev libatlas-base-dev \
+#3D render deps
 build-essential freeglut3 freeglut3-dev libxmu-dev libxi-dev \
 libeigen3-dev libsuitesparse-dev
-
 #for python api
 RUN pip3 install numpy opencv-python 
 
