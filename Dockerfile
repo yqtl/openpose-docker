@@ -20,8 +20,10 @@ tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt && \
 rm cmake-3.14.2-Linux-x86_64.tar.gz
 ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 #build Ceres
-RUN git clone https://ceres-solver.googlesource.com/ceres-solver . && cd ceres-solver && mkdir ceres-bin && cd ceres-bin \
-cmake ../ceres-solver && make -j3 && make test && make install
+WORKDIR /ceres-solver
+RUN git clone https://ceres-solver.googlesource.com/ceres-solver . 
+WORKDIR /ceres-solver/ceres-bin
+RUN cmake ../ceres-solver && make -j3 && make test && make install
 #get openpose
 WORKDIR /openpose
 RUN git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose.git .
