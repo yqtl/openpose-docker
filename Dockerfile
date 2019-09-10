@@ -1,5 +1,5 @@
 #FROM nvidia/cuda:10.0-cudnn7-devel
-FROM nvidia/cuda:8.0-cudnn7-devel-ubuntu16.04
+FROM nvidia/cuda:8.0-cudnn7-devel
 
 #get deps
 #a. Do not do anything if you set the WITH_flag to BUILD, CMake will automatically download Eigen. 
