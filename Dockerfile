@@ -10,9 +10,7 @@ RUN apt-get update && \
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 python3-dev python3-pip git g++ wget make libprotobuf-dev protobuf-compiler libopencv-dev \
 libgoogle-glog-dev libboost-all-dev libcaffe-cuda-dev libhdf5-dev libatlas-base-dev \
-#3D render deps
 build-essential freeglut3 freeglut3-dev libxmu-dev libxi-dev \
-#deps for eigen
 libsuitesparse-dev libavcodec57 libavformat57 libswscale4 libswresample2 libavutil55 libusb-1.0-0 libgtkmm-2.4-dev
 #for python api
 RUN pip3 install numpy opencv-python 
