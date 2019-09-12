@@ -14,9 +14,6 @@ libgoogle-glog-dev libboost-all-dev libcaffe-cuda-dev libhdf5-dev libatlas-base-
 build-essential freeglut3 freeglut3-dev libxmu-dev libxi-dev \
 #deps for eigen
 libsuitesparse-dev libavcodec57 libavformat57 libswscale4 libswresample2 libavutil55 libusb-1.0-0 libgtkmm-2.4-dev
-#install eigen (wget)
-RUN wget http://bitbucket.org/eigen/eigen/get/3.3.7.tar.gz && tar xzf 3.3.7.tar.gz && rm 3.3.7.tar.gz && cd eigen-eigen-323c052e1731/ && \
-mkdir build && cd build && cmake .. && make -j`nproc` && make test && make install
 #for python api
 RUN pip3 install numpy opencv-python 
 #replace cmake as old version has CUDA variable bugs
@@ -24,6 +21,9 @@ RUN wget https://github.com/Kitware/CMake/releases/download/v3.14.2/cmake-3.14.2
 tar xzf cmake-3.14.2-Linux-x86_64.tar.gz -C /opt && \
 rm cmake-3.14.2-Linux-x86_64.tar.gz
 ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
+#install eigen (wget)
+RUN wget http://bitbucket.org/eigen/eigen/get/3.3.7.tar.gz && tar xzf 3.3.7.tar.gz && rm 3.3.7.tar.gz && cd eigen-eigen-323c052e1731/ && \
+mkdir build && cd build && cmake .. && make -j`nproc` && make test && make install
 #install flir
 RUN wget https://kth.boxcn.net/shared/static/6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && \
 tar xzf 6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && rm 6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && \
