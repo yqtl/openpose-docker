@@ -15,7 +15,7 @@ build-essential freeglut3 freeglut3-dev libxmu-dev libxi-dev \
 #deps for eigen
 libsuitesparse-dev libavcodec57 libavformat57 libswscale4 libswresample2 libavutil55 libusb-1.0-0 libgtkmm-2.4-dev
 #install eigen (wget)
-RUN wget http://bitbucket.org/eigen/eigen/get/3.3.7.tar.gz && tar xzf 3.7.7.tar.gz && rm 3.7.7.tar.gz && cd eigen-eigen-323c052e1731/ && \
+RUN wget http://bitbucket.org/eigen/eigen/get/3.3.7.tar.gz && tar xzf 3.3.7.tar.gz && rm 3.3.7.tar.gz && cd eigen-eigen-323c052e1731/ && \
 mkdir build && cd build && cmake .. && make -j`nproc` && make test && make install
 #for python api
 RUN pip3 install numpy opencv-python 
