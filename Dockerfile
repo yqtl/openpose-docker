@@ -21,7 +21,7 @@ rm cmake-3.14.2-Linux-x86_64.tar.gz
 ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 #install eigen (wget)
 RUN wget http://bitbucket.org/eigen/eigen/get/3.3.7.tar.gz && tar xzf 3.3.7.tar.gz && rm 3.3.7.tar.gz && cd eigen-eigen-323c052e1731/ && \
-mkdir build && cd build && cmake .. && make -j`nproc` && make test && make install
+mkdir build && cd build && cmake .. && make install && make check
 #install flir
 RUN wget https://kth.boxcn.net/shared/static/6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && \
 tar xzf 6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && rm 6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && \
