@@ -23,7 +23,7 @@ ENV PATH="/opt/cmake-3.14.2-Linux-x86_64/bin:${PATH}"
 RUN wget http://bitbucket.org/eigen/eigen/get/3.3.7.tar.gz && tar xzf 3.3.7.tar.gz && rm 3.3.7.tar.gz && cd eigen-eigen-323c052e1731/ && \
 mkdir build && cd build && cmake .. && make install && make check
 #install flir
-RUN wget https://kth.boxcn.net/shared/static/6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && \
+RUN wget https://kth.box.com/shared/static/6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && \
 tar xzf 6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && rm 6olzu8c3n45thhdy4yx12cpkfqaadrc0.gz && \
 cd spinnaker-1.26.0.31-amd64/ && printf "Y\nY\n\n" | ./install_spinnaker.sh
 #build Ceres
